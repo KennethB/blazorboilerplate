@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.Localization;
-using System;
-using System.Threading.Tasks;
 
 namespace BlazorBoilerplate.UI.Base.Shared.Components
 {
@@ -21,6 +19,7 @@ namespace BlazorBoilerplate.UI.Base.Shared.Components
         public virtual void Dispose()
         {
             apiClient.CancelChanges();
+            apiClient.ClearEntitiesCache();
         }
     }
 }

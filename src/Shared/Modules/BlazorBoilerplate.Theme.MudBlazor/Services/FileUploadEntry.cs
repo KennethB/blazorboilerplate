@@ -1,7 +1,5 @@
 ﻿using BlazorBoilerplate.Shared.Interfaces;
 using Microsoft.AspNetCore.Components.Forms;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace BlazorBoilerplate.Theme.Material.Services
 {
@@ -18,7 +16,7 @@ namespace BlazorBoilerplate.Theme.Material.Services
         {
             var buffer = new byte[fileUploadEntry.Size];
 
-            await fileUploadEntry.OpenReadStream().ReadAsync(buffer);
+            await fileUploadEntry.OpenReadStream(104857600).ReadAsync(buffer);
 
             await stream.WriteAsync(buffer);
         }

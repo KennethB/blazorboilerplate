@@ -3,11 +3,7 @@ using BlazorBoilerplate.Shared.Interfaces;
 using BlazorBoilerplate.Shared.Models;
 using BlazorBoilerplate.Theme.Material.Shared.Components;
 using Breeze.Sharp;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlazorBoilerplate.Theme.Material.Demo.Pages
 {
@@ -19,6 +15,7 @@ namespace BlazorBoilerplate.Theme.Material.Demo.Pages
         protected List<SelectItem<Guid?>> Editors = new();
         protected override async Task OnInitializedAsync()
         {
+            //waitingForFilter = true; // set this if you want to wait to load your table data for whatever reason and set it to false when you want it to execute.
             await LoadFilters();
 
             queryParameters = todoFilter;
